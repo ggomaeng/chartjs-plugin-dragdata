@@ -1520,9 +1520,7 @@
 
       isDragging = true;
 
-      // let dataPoint = chartInstance.data.datasets[curDatasetIndex].data[curIndex]
-      const dp = chartInstance.data.datasets[curDatasetIndex].data[curIndex];
-      const dataPoint = typeof dp === "object" ? { ...dp } : dp;
+      let dataPoint = chartInstance.data.datasets[curDatasetIndex].data[curIndex];
 
       if (type === "radar" || type === "polarArea") {
         dataPoint = calcRadar(e, chartInstance);
