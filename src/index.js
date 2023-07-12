@@ -140,9 +140,10 @@ function calcRadar(e, chartInstance) {
 
 function calcPosition(e, chartInstance, datasetIndex, index, data) {
   let x, y;
-  // const dataPoint = chartInstance.data.datasets[datasetIndex].data[index]
-  const dp = chartInstance.data.datasets[datasetIndex].data[index];
-  const dataPoint = typeof dp === "object" ? { ...dp } : dp;
+  // constdatasetIndex dataPoint = chartInstance.data.datasets[datasetIndex].data[index]
+  const dataPoint = JSON.parse(
+    JSON.stringify(chartInstance.data.datasets[datasetIndex].data[index])
+  );
 
   if (e.touches) {
     x = chartInstance.scales[xAxisID].getValueForPixel(
