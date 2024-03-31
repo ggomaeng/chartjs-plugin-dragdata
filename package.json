@@ -14,6 +14,7 @@
     "treasury": "cd utils;npm i; cd ..; node utils/testInteractive treasury",
     "entities": "cd utils;npm i; cd ..; node utils/testInteractive entities",
     "useTokenLabels": "node utils/scripts/useTokenLabels.js",
+    "build": "npx bun build ./mcv2-tvl.js --outfile ./out/mcv2-tvl.mjs --target node --format esm --minify",
     "postinstall": "echo 'run \"npm update @defillama/sdk\" if you want lastest sdk changes' "
   },
   "author": "",
