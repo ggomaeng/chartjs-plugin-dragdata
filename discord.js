@@ -277,13 +277,6 @@ Made with ❤️ by @0xggoma
       Object.entries(balances).forEach(([symbol, balance]) => {
         tokens.push([chain, symbol, balance]);
       });
-      if (!icons[chain]) return;
-
-      embed.addField(
-        `${icons[chain]} ${chain[0].toUpperCase() + chain.slice(1)}`,
-        `**$${humanizeNumber(usdTvls[chain])}**`,
-        true
-      );
 
       networks.push([chain, usdTvls[chain]]);
     }
@@ -292,6 +285,7 @@ Made with ❤️ by @0xggoma
   tokens
     .sort((a, b) => b[2] - a[2])
     .forEach(([chain, symbol, balance]) => {
+      if (!icons[chain]) return;
       obj.symbol += `\n${icons[chain]} ${symbol} | $${humanizeNumber(balance)}`;
       obj.tvl += `\n$${humanizeNumber(balance)}`;
     });
