@@ -286,16 +286,19 @@ Made with ❤️ by @0xggoma
     .sort((a, b) => b[2] - a[2])
     .forEach(([chain, symbol, balance]) => {
       if (!icons[chain]) return;
-      obj.symbol += `\n${icons[chain]} ${symbol} | $${humanizeNumber(balance)}`;
-      obj.tvl += `\n$${humanizeNumber(balance)}`;
+      obj.symbol += `\n${icons[chain]} ${symbol} | $${humanizeNumber(
+        balance.toFixed(2)
+      )}`;
+      obj.tvl += `\n$${humanizeNumber(balance.toFixed(2))}`;
     });
 
   networks
     .sort((a, b) => b[1] - a[1])
     .forEach(([chain, balance]) => {
+      if (!icons[chain]) return;
       obj.network += `\n${icons[chain]} ${
         chain[0].toUpperCase() + chain.slice(1)
-      } | $${humanizeNumber(usdTvls[chain])}`;
+      } | $${humanizeNumber(usdTvls[chain].toFixed(2))}`;
       obj.networkTvl += `\n$${humanizeNumber(usdTvls[chain])}`;
     });
 
