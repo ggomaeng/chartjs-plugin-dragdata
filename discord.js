@@ -309,7 +309,7 @@ Made with ❤️ by @0xggoma
     obj.symbol = obj.symbol.slice(0, obj.symbol.lastIndexOf("\n"));
   }
 
-  embed.addField("Bonded Asset | TVL", obj.symbol);
+  embed.addField("==== Bonded Asset | TVL ====", obj.symbol);
   // embed.addField("\u200b", "\u200b", true);
 
   // embed.addField("\u200b", "\u200b");
