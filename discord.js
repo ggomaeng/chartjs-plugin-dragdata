@@ -241,6 +241,7 @@ sdk.api.abi.call = async (...args) => {
     bsc: "<:bsc:1154689724586397776>",
     base: "<:base:1153261592427896832>",
     degen: "<:degen:1224000785445163160>",
+    zora: "<:zora:1225726879399546951>",
   };
 
   const description = `
